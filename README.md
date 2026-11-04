@@ -208,13 +208,4 @@ Gerados com `scripts/gerar_exemplos.py`. Cada arquivo mostra as ferramentas cham
 - **Interface:** é só CLI. A mesma classe `Agente` poderia ser exposta numa API (FastAPI) e plugada num webhook de WhatsApp.
 - **Observabilidade:** registrar latência, tokens e ferramentas por turno (ex.: Langfuse) para acompanhar erros e custo.
 
----
-
-## 8. Uso de assistentes de código
-
-Usei o **Claude Code** (Claude Opus) como par de programação neste projeto:
-
-1. **Entendimento do desafio:** pedi a leitura do enunciado e do manual de políticas, e uma análise exploratória dos CSVs com pandas. Foi nessa etapa que apareceram as inconsistências listadas na seção 4 (descrições trocadas, status × estoque, totais divergentes, e-mail duplicado, contradições do PDF).
-2. **Arquitetura:** discuti as opções (RAG, agente de SQL, function calling) e decidi por ferramentas tipadas com cálculos determinísticos. As escolhas de provedor foram minhas: Ollama local e a exigência de que o projeto funcionasse com qualquer API compatível com OpenAI, para facilitar a avaliação.
-3. **Implementação:** o assistente escreveu a primeira versão de cada módulo e dos testes. Eu revisei, rodei e ajustei.
-4. **Validação:** testes automatizados das regras de negócio e execução real dos cenários de exemplo com o modelo local.
+--
